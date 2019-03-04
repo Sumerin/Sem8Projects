@@ -253,85 +253,90 @@ def CheckMyCountFunction():
 
 def TimeTest():
     t = 0
+    with open("resultPython", "w") as file_object:
+        for i in range(0,4):
+            before = time.clock()
+            for record in Data:
+                start = int(record[1])
+                end = int(record[2])
+                substring = record[3]
+                src = record[4]
 
-    before = time.clock()
-    for record in Data:
-        start = int(record[1])
-        end = int(record[2])
-        substring = record[3]
-        src = record[4]
+                for _ in range(0,1000):
+                    t += 1
+            after = time.clock()
 
-        for _ in range(0,1000):
-            t += 1
-    after = time.clock()
+            loopTime = after - before
 
-    loopTime = after - before
+            before = time.clock()
+            for record in Data:
+                start = int(record[1])
+                end = int(record[2])
+                substring = record[3]
+                src = record[4]
 
-    before = time.clock()
-    for record in Data:
-        start = int(record[1])
-        end = int(record[2])
-        substring = record[3]
-        src = record[4]
+                for _ in range(0,1000):
+                    t += 1
+                    count(src,substring,start,end)
 
-        for _ in range(0,1000):
-            t += 1
-            count(src,substring,start,end)
+            after = time.clock()
 
-    after = time.clock()
+            myImplTime = after - before
 
-    myImplTime = after - before
+            before = time.clock()
+            for record in Data:
+                start = int(record[1])
+                end = int(record[2])
+                substring = record[3]
+                src = record[4]
 
-    before = time.clock()
-    for record in Data:
-        start = int(record[1])
-        end = int(record[2])
-        substring = record[3]
-        src = record[4]
+                for _ in range(0, 1000):
+                    t += 1
+                    src.count(substring, start, end)
 
-        for _ in range(0, 1000):
-            t += 1
-            src.count(substring, start, end)
+            after = time.clock()
 
-    after = time.clock()
-
-    builtInTime = after - before
-
-    print 'BuiltIn: {} Implementation: {} loop time: {} Data Size: {} '.format(builtInTime,myImplTime,loopTime,len(Data))
+            builtInTime = after - before
+            file_object.write("{};{};{}\n".format(builtInTime,myImplTime,loopTime))
+            print 'BuiltIn: {} Implementation: {} loop time: {} Data Size: {} '.format(builtInTime,myImplTime,loopTime,len(Data))
 
 
-Test1()
-Test2()
-Test3()
-Test4()
-Test5()
-Test6()
-Test7()
-Test8()
-Test9()
-Test10()
-TestOptional_1()
-TestOptional_2()
-TestOptional_3()
-TestOptional_4()
-TestOptional_5()
-TestOptional_6()
-TestOptional_7()
-TestOptional_8()
-TestOptional_9()
-TestOptional_10()
-TestOptional_11()
-TestOptional_12()
-TestOptional_13()
-TestOptional_14()
-TestOptional_15()
-TestOptional_16()
-TestOptional_17()
-TestOptional_18()
-TestOptional_19()
-TestOptional_20()
-TestOptional_21()
 
+def UnitTest():
+
+    Test1()
+    Test2()
+    Test3()
+    Test4()
+    Test5()
+    Test6()
+    Test7()
+    Test8()
+    Test9()
+    Test10()
+    TestOptional_1()
+    TestOptional_2()
+    TestOptional_3()
+    TestOptional_4()
+    TestOptional_5()
+    TestOptional_6()
+    TestOptional_7()
+    TestOptional_8()
+    TestOptional_9()
+    TestOptional_10()
+    TestOptional_11()
+    TestOptional_12()
+    TestOptional_13()
+    TestOptional_14()
+    TestOptional_15()
+    TestOptional_16()
+    TestOptional_17()
+    TestOptional_18()
+    TestOptional_19()
+    TestOptional_20()
+    TestOptional_21()
+
+#UnitTest()
 #GenerateData()# uncomment to make package
 
 LoadData()

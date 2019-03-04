@@ -368,6 +368,7 @@ void TimeTest()
     int t = 0;
     int i = 0;
     int j = 0;
+	int p=0;
     clock_t before;
     clock_t after;
     double loopTime;
@@ -378,8 +379,12 @@ void TimeTest()
     int end = 0;
     const char *subString = NULL;
     const char *src = NULL;
+	FILE *file;
 
-
+    
+    file = fopen("resultC", "w");
+for(p=0 ;p<4;p++)
+{
     before = clock();
     for (i = 0; i < BATCH_SIZE; ++i) {
         start = atoi(Data[i][1]);
@@ -409,23 +414,22 @@ void TimeTest()
     }
     after = clock();
 
-    myImplTime = (after - before)*1.0 /CLOCKS_PER_SEC;
+    myImplTime = ((after - before)*1.0 /CLOCKS_PER_SEC);
 
-    printf("LoopTime: %f\n MyImplTime: %f\n",loopTime, myImplTime);
+    printf("LoopTime: %f MyImplTime: %f\n",loopTime, myImplTime);
+	fprintf(file, "%f;%f\n", myImplTime, loopTime);
+}
 }
 
 
 int main() {
 
-    float breakProgram;
+    //UnitTest();
 
-    UnitTest();
-
-    //breakProgram = 5/0;
-    printf("%ld\n", CLOCKS_PER_SEC);
+    printf("%ld\n %lu", CLOCKS_PER_SEC, sizeof(void*)*8);
 
     LoadData();
-    CheckMyCountFunction();
+    //CheckMyCountFunction();//Uncomment for checking result with pyton native function.
     TimeTest();
 
     return 0;
