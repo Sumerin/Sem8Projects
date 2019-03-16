@@ -99,7 +99,7 @@ static PyObject *AdjacencyMatrix_AddVertex(AdjacencyMatrix *self) {
     }
     for (int v = 0; v < self->order; ++v) {
         self->matrix[v] = realloc(self->matrix[v], (self->order + 1) * sizeof(char));
-        self->matrix[self->order] = 0;
+        self->matrix[v][self->order] = 0;
     }
     self->matrix = realloc(self->matrix, (self->order + 1) * sizeof(char *));
     self->matrix[self->order] = (char *) calloc((self->order + 1), sizeof(char));

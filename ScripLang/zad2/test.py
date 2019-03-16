@@ -83,8 +83,8 @@ try:
         #     continue
         # if n< 12005178:
         #     continue
-        # print (n)
-        # Test konwersji z/do formatu g6
+        #print (n)
+        #Test konwersji z/do formatu g6
         try:
             g, h = TestedGraph( g6 ), Graph( g6 )
             if str( g ) != g6 or h != g:
@@ -93,18 +93,18 @@ try:
         except Exception as e:
             print( "!!! Test konwersji z/do formatu g6 zakończył się dla grafu {0} wyjątkiem '{1}'".format( g6, str( e ) ) )
             exit()
-        # Test dodawania i usuwania wierzchołków
-        # try:
-        #     g, h = TestedGraph( g6 ), Graph( g6 )
-        #     g.addVertex()
-        #     g.deleteVertex( g.order() - 1 )
-        #     if h != g:
-        #         print( "!!! Błąd usuwania/dodawania wierzchołka dla grafu {0}".format( g6 ) )
-        #         exit()
-        # except Exception as e:
-        #     print( "!!! Test dodawania/usuwania wierzchołków zakończył się dla grafu {0} wyjątkiem '{1}'".format( g6, str( e ) ) )
-        #     exit()
-        # Test dodawania, usuwania i sprawdzania istnienia krawędzi
+        #Test dodawania i usuwania wierzchołków
+        try:
+            g, h = TestedGraph( g6 ), Graph( g6 )
+            g.addVertex()
+            g.deleteVertex( g.order() - 1 )
+            if h != g:
+                print( "!!! Błąd usuwania/dodawania wierzchołka dla grafu {0}".format( g6 ) )
+                exit()
+        except Exception as e:
+            print( "!!! Test dodawania/usuwania wierzchołków zakończył się dla grafu {0} wyjątkiem '{1}'".format( g6, str( e ) ) )
+            exit()
+        #Test dodawania, usuwania i sprawdzania istnienia krawędzi
         try:
             g = TestedGraph( g6 )
             for u in range( g.order() ):
