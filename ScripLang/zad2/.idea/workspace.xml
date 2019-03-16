@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/SimpleGraph.c" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="zad2" targetName="zad2" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b2285534-a9f0-49f6-86bd-1e49464628d4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Zad2/.graphs.pyc.swp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad2/Setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad2/SetupT.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad2/SimpleGraph.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad2/graphs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad2/graphs.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad2/t.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad2/test.py" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file:///usr/include/python3.5m/object.h">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="128">
+                    <caret line="834" column="8" selection-start-line="834" selection-start-column="8" selection-end-line="834" selection-end-column="8" />
+                    <folding>
+                      <element signature="e#14581#14783#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SimpleGraph.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-285">
+              <caret line="69" column="20" lean-forward="true" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>order</find>
+      <find>noVertex</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/SimpleGraph.c" />
+      </list>
+    </option>
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2323" />
+    <option name="y" value="80" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="zad2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zad2" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="zad2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="zad2" TARGET_NAME="zad2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="zad2" RUN_TARGET_NAME="zad2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2285534-a9f0-49f6-86bd-1e49464628d4" name="Default Changelist" comment="" />
+      <created>1552586687785</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1552586687785</updated>
+      <workItem from="1552586689261" duration="9978000" />
+      <workItem from="1552742937452" duration="11838000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="21816000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1919" y="0" width="1922" height="1080" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18249734" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39979124" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.30167013" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32977587" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/SimpleGraph.c</url>
+          <line>395</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/python3.5m/unicodeobject.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="724" column="48" lean-forward="true" selection-start-line="724" selection-start-column="48" selection-end-line="724" selection-end-column="48" />
+          <folding>
+            <element signature="e#76#2238#0" />
+            <element signature="e#2585#2740#0" />
+            <element signature="e#2799#2900#0" />
+            <element signature="e#2963#3193#0" />
+            <element signature="e#3286#3473#0" />
+            <element signature="e#3790#3875#0" />
+            <element signature="e#4280#4533#0" />
+            <element signature="e#6740#6856#0" />
+            <element signature="e#7381#7672#0" />
+            <element signature="e#7681#12932#0" />
+            <element signature="e#7694#10331#0" />
+            <element signature="e#10492#12844#1" />
+            <element signature="e#10509#10781#0" />
+            <element signature="e#10823#11813#0" />
+            <element signature="e#11851#12097#0" />
+            <element signature="e#12138#12343#0" />
+            <element signature="e#12382#12660#0" />
+            <element signature="e#12699#12812#0" />
+            <element signature="e#12949#13121#0" />
+            <element signature="e#13130#13520#0" />
+            <element signature="e#13196#13291#0" />
+            <element signature="e#13401#13518#0" />
+            <element signature="e#13546#13761#0" />
+            <element signature="e#13770#13994#0" />
+            <element signature="e#13817#13920#1" />
+            <element signature="e#14532#14802#0" />
+            <element signature="e#15256#15525#0" />
+            <element signature="e#16042#16206#0" />
+            <element signature="e#16401#16504#0" />
+            <element signature="e#16585#16735#0" />
+            <element signature="e#16862#17228#1" />
+            <element signature="e#16884#17056#0" />
+            <element signature="e#17231#17455#0" />
+            <element signature="e#18476#18686#0" />
+            <element signature="e#18688#19035#0" />
+            <element signature="e#19576#19687#0" />
+            <element signature="e#20000#20268#0" />
+            <element signature="e#20845#21052#0" />
+            <element signature="e#21243#21381#0" />
+            <element signature="e#21451#21667#0" />
+            <element signature="e#21885#22072#0" />
+            <element signature="e#22743#22967#0" />
+            <element signature="e#23190#23413#0" />
+            <element signature="e#23644#23986#0" />
+            <element signature="e#24249#24943#0" />
+            <element signature="e#25138#25302#0" />
+            <element signature="e#25503#25800#0" />
+            <element signature="e#25938#26091#0" />
+            <element signature="e#26235#26607#0" />
+            <element signature="e#27045#27181#0" />
+            <element signature="e#27315#27447#0" />
+            <element signature="e#27558#27690#0" />
+            <element signature="e#27918#28025#0" />
+            <element signature="e#28145#28437#0" />
+            <element signature="e#28565#28725#0" />
+            <element signature="e#28789#28978#0" />
+            <element signature="e#29117#29334#0" />
+            <element signature="e#29667#29740#0" />
+            <element signature="e#29978#30169#0" />
+            <element signature="e#30416#31090#0" />
+            <element signature="e#31251#31679#0" />
+            <element signature="e#31885#32197#0" />
+            <element signature="e#32558#33095#0" />
+            <element signature="e#32966#33065#0" />
+            <element signature="e#33116#33339#0" />
+            <element signature="e#33407#33569#0" />
+            <element signature="e#34079#34172#0" />
+            <element signature="e#34319#34419#0" />
+            <element signature="e#34512#34609#0" />
+            <element signature="e#34739#34851#0" />
+            <element signature="e#35028#35137#0" />
+            <element signature="e#35356#35465#0" />
+            <element signature="e#35668#35805#0" />
+            <element signature="e#36046#36151#0" />
+            <element signature="e#36872#36995#0" />
+            <element signature="e#37157#37635#0" />
+            <element signature="e#37849#38233#0" />
+            <element signature="e#38606#38768#0" />
+            <element signature="e#38909#39084#0" />
+            <element signature="e#39134#39776#0" />
+            <element signature="e#39858#40630#0" />
+            <element signature="e#40812#41476#0" />
+            <element signature="e#41776#41860#0" />
+            <element signature="e#42116#42196#0" />
+            <element signature="e#42408#42489#0" />
+            <element signature="e#42702#42792#0" />
+            <element signature="e#43105#43179#0" />
+            <element signature="e#43391#43472#0" />
+            <element signature="e#43684#43759#0" />
+            <element signature="e#46568#47341#0" />
+            <element signature="e#47586#47726#0" />
+            <element signature="e#47986#48126#0" />
+            <element signature="e#48188#48311#0" />
+            <element signature="e#48421#48877#0" />
+            <element signature="e#49545#50317#0" />
+            <element signature="e#50562#50702#0" />
+            <element signature="e#50962#51102#0" />
+            <element signature="e#51164#51287#0" />
+            <element signature="e#51397#52047#0" />
+            <element signature="e#53958#54082#0" />
+            <element signature="e#54236#54380#0" />
+            <element signature="e#55080#55231#0" />
+            <element signature="e#55925#56781#0" />
+            <element signature="e#56968#57060#0" />
+            <element signature="e#57256#57348#0" />
+            <element signature="e#57592#57684#0" />
+            <element signature="e#57878#57970#0" />
+            <element signature="e#58039#58479#0" />
+            <element signature="e#60432#61241#0" />
+            <element signature="e#61581#61753#0" />
+            <element signature="e#61981#62259#0" />
+            <element signature="e#62497#63006#0" />
+            <element signature="e#63128#63226#0" />
+            <element signature="e#63321#63582#0" />
+            <element signature="e#63763#63888#0" />
+            <element signature="e#63948#64082#0" />
+            <element signature="e#64140#64415#0" />
+            <element signature="e#64527#64712#0" />
+            <element signature="e#64876#65085#0" />
+            <element signature="e#65166#65426#0" />
+            <element signature="e#65632#65719#0" />
+            <element signature="e#65876#65986#0" />
+            <element signature="e#66149#66455#0" />
+            <element signature="e#66666#66803#0" />
+            <element signature="e#67203#67293#0" />
+            <element signature="e#67460#67851#0" />
+            <element signature="e#68063#68469#0" />
+            <element signature="e#68675#68777#0" />
+            <element signature="e#68934#69020#0" />
+            <element signature="e#69349#69533#0" />
+            <element signature="e#70388#70504#0" />
+            <element signature="e#70740#70827#0" />
+            <element signature="e#70836#70971#0" />
+            <element signature="e#71439#71897#0" />
+            <element signature="e#72129#72235#0" />
+            <element signature="e#72405#72588#0" />
+            <element signature="e#73038#73217#0" />
+            <element signature="e#73734#73894#0" />
+            <element signature="e#77045#77274#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/python3.5m/boolobject.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/python3.5m/object.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="834" column="8" selection-start-line="834" selection-start-column="8" selection-end-line="834" selection-end-column="8" />
+          <folding>
+            <element signature="e#14581#14783#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleGraph.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-285">
+          <caret line="69" column="20" lean-forward="true" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
