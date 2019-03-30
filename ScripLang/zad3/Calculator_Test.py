@@ -289,6 +289,125 @@ class CalculatorTest(unittest.TestCase):
         self.assertEqual("0.4", self.calc.Display)
         self.assertFalse(self.calc.IsNegative)
 
+    def test_Clear(self):
+        self.calc.Press("-")
+        self.calc.Press("5")
+        self.calc.Press("C/CE")
+        self.assertEqual("0", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+
+    def test_input_after_Clear(self):
+        self.calc.Press("-")
+        self.calc.Press("5")
+        self.calc.Press("C/CE")
+        self.calc.Press("-")
+        self.calc.Press(".")
+        self.calc.Press("5")
+        self.assertEqual("0.5", self.calc.Display)
+        self.assertTrue(self.calc.IsNegative)
+
+    def test_equatation_after_Clear(self):
+        self.calc.Press("-")
+        self.calc.Press("5")
+        self.calc.Press("C/CE")
+        self.calc.Press("-")
+        self.calc.Press(".")
+        self.calc.Press("5")
+        self.calc.Press("x")
+        self.calc.Press("5")
+        self.calc.Press("=")
+        self.assertEqual("2.5", self.calc.Display)
+        self.assertTrue(self.calc.IsNegative)
+
+    def test_negative_multiply(self):
+        self.calc.Press("-")
+        self.calc.Press("5")
+        self.calc.Press("x")
+        self.calc.Press("-")
+        self.calc.Press("6")
+        self.calc.Press("=")
+        self.assertEqual("30", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+
+    def test_M_plus_value(self):
+        self.calc.Press("5")
+        self.calc.Press("4")
+        self.calc.Press("M+")
+        self.assertTrue(self.calc.IsMemorized)
+
+    def test_M_plus_value2(self):
+        self.calc.Press("5")
+        self.calc.Press("4")
+        self.calc.Press("M+")
+        self.calc.Press("5")
+        self.assertEqual("5", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+
+    def test_MRC_value(self):
+        self.calc.Press("4")
+        self.calc.Press("M+")
+        self.calc.Press("-")
+        self.calc.Press("5")
+        self.calc.Press("M+")
+        self.calc.Press("MRC")
+        self.assertEqual("1", self.calc.Display)
+        self.assertTrue(self.calc.IsNegative)
+
+    def test_MRC_value2(self):
+        self.calc.Press("4")
+        self.calc.Press("M+")
+        self.calc.Press("-")
+        self.calc.Press("5")
+        self.calc.Press("M-")
+        self.calc.Press("MRC")
+        self.assertEqual("9", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+
+    def test_value_after_MRC(self):
+        self.calc.Press("4")
+        self.calc.Press("M+")
+        self.calc.Press("-")
+        self.calc.Press("5")
+        self.calc.Press("M+")
+        self.calc.Press("MRC")
+        self.calc.Press("3")
+        self.assertEqual("3", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+
+    def test_sqrt(self):
+        self.calc.Press("4")
+        self.calc.Press("sqrt")
+        self.assertEqual("2", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+
+    def test_sqrt_error(self):
+        self.calc.Press("-")
+        self.calc.Press("4")
+        self.calc.Press("sqrt")
+        self.assertEqual("0", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+        self.assertTrue(self.calc.Error)
+
+    def test_percent_multiply(self):
+        self.calc.Press("1")
+        self.calc.Press("0")
+        self.calc.Press("0")
+        self.calc.Press("x")
+        self.calc.Press("2")
+        self.calc.Press("p")
+        self.assertEqual("2", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+
+    def test_percent_Divide(self):
+        self.calc.Press("1")
+        self.calc.Press("0")
+        self.calc.Press("0")
+        self.calc.Press("/")
+        self.calc.Press("2")
+        self.calc.Press("p")
+        self.assertEqual("5000", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+
 
 if __name__ == '__main__':
     unittest.main()

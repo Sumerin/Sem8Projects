@@ -2,6 +2,32 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 from sys import argv
 from Calculator import Calculator
 
+class IconsDrawer(QtWidgets.QWidget):
+
+    def __init__( self):
+        super().__init__()
+        # self.setSizePolicy( QtWidgets.QSizePolicy( QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding ) )
+        self.__m_visible = False
+        self.__minus_visible = False
+
+    def paintEvent( self, event ):
+        w, h = self.width(), self.height()
+        middle = h/2
+        minus_h = middle + middle/2
+        minus_w_start = 5
+        minus_w_end = w - 5
+        p = QtGui.QPainter( self )
+        p.setPen( QtGui.QPen(QtCore.Qt.black, 5) )
+        p.setBrush( QtGui.QBrush( QtGui.QColor( 0, 0, 0 ) ) )
+
+        if self.__minus_visible:
+            p.drawLine( minus_w_start, minus_h, minus_w_end, minus_h)
+
+    def setMinusVisible(self, bool):
+        self.__minus_visible = bool
+        self.repaint()
+
+
 class CalculatorViewer( QtWidgets.QDialog ):
 
     def __init__( self):
@@ -10,9 +36,21 @@ class CalculatorViewer( QtWidgets.QDialog ):
         self.__index = 0
         self.__calculator = Calculator()
         self.__equatation_label = QtWidgets.QLabel(self.__calculator.Display)
+        self.__icons = IconsDrawer()
         self.__buttonMatrix = self.createButtons()
+
+        self.__icons.setMaximumWidth(20)
+
         b1 = QtWidgets.QVBoxLayout()
-        b1.addWidget(self.__equatation_label, QtCore.Qt.AlignRight)
+        screen = QtWidgets.QHBoxLayout()
+        lScreen = QtWidgets.QVBoxLayout()
+        lScreen.addWidget(self.__icons)
+        rScreen = QtWidgets.QVBoxLayout()
+        rScreen.addWidget(self.__equatation_label, 1, QtCore.Qt.AlignRight)
+        screen.addLayout(lScreen)
+        screen.addLayout(rScreen)
+
+        b1.addLayout(screen)
         buttonLayout = QtWidgets.QGridLayout()
 
         row_idx = 0;
@@ -20,7 +58,7 @@ class CalculatorViewer( QtWidgets.QDialog ):
             col_idx = 0
             for [button, rowspan, colspan] in button_row:
                 buttonLayout.addWidget(button, row_idx, col_idx, rowspan, colspan)
-                col_idx += 1
+                col_idx += colspan
             row_idx += 1
         b1.addLayout(buttonLayout)
         self.setLayout(b1)
@@ -34,8 +72,7 @@ class CalculatorViewer( QtWidgets.QDialog ):
         buttons = [
 
             [
-                self.createButton("C/CE"),
-                self.createButton("OFF"),
+                self.createButton("C/CE", colspan=2),
                 self.createButton("\u221A"),
                 self.createButton("\u0025")
             ],
@@ -84,6 +121,7 @@ class CalculatorViewer( QtWidgets.QDialog ):
         def calluser():
             self.__calculator.Press(name)
             self.__equatation_label.setText(self.__calculator.Display)
+            self.__icons.setMinusVisible(self.__calculator.IsNegative)
         return calluser
 
 

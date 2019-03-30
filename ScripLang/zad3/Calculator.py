@@ -1,3 +1,4 @@
+import math
 
 class Calculator():
 
@@ -7,9 +8,16 @@ class Calculator():
         self.__countRegister = 0
         self.__swapNumber = True
         self.__lastSign = "="
+        self.__earseMinus = True
+        self.__memoryRegister = 0
         self.IsNegative = False
+        self.IsMemorized = False
+        self.Error = False
 
     def Press(self, char):
+
+        if self.Error and char == "C/CE":
+            return None
         switcher = {
             "0": self.typeNumber,
             "1": self.typeNumber,
@@ -27,6 +35,12 @@ class Calculator():
             "=": self.typeSign,
             "x": self.typeSign,
             "/": self.typeSign,
+            "C/CE": self.clear,
+            "M+": self.memorize,
+            "M-": self.memorize,
+            "MRC": self.restore,
+            "sqrt": self.sqrt,
+            "p": self.percent
         }
         func = switcher.get(char)
         func(char)
@@ -35,10 +49,11 @@ class Calculator():
         if char == '0' and len(self.Display) == 1 and self.Display[0] == '0':
             pass
         elif self.__swapNumber:
-            if len(self.Display) != 1 or self.Display[0] != '0':
+            if self.__earseMinus:
                 self.IsNegative = False
             self.Display = char
             self.__swapNumber = False
+            self.__earseMinus = False
         else:
             self.Display += char
 
@@ -51,12 +66,13 @@ class Calculator():
             self.__swapNumber = False
 
     def typeSign(self, char):
-        if self.__swapNumber and char == '-':
+        if self.__earseMinus is True and char == '-':
             self.IsNegative = True
+            self.__earseMinus = False
             return None
 
         self.proceed(self.__lastSign)
-        self.registerToDisplay()
+        self.registerToDisplay(self.__countRegister)
         self.__lastSign = char
 
         if char == '=':
@@ -69,7 +85,7 @@ class Calculator():
         value = float(self.Display)
         if self.IsNegative:
             value *= -1
-        self.IsNegative = False
+        self.__earseMinus = True
 
         if char == "=":
             self.__countRegister = value
@@ -84,9 +100,7 @@ class Calculator():
         elif char == '/':
             self.__countRegister /= value
 
-
-    def registerToDisplay(self):
-        value = self.__countRegister
+    def registerToDisplay(self, value):
         if value < 0:
             value *= -1
             self.IsNegative = True
@@ -97,3 +111,50 @@ class Calculator():
             self.Display = str(value)
         else:
             self.Display = str(int(value))
+
+    def clear(self, char):
+        self.Display = "0"
+        self.__decimalSign = False
+        self.__swapNumber = True
+        self.IsNegative = False
+        self.__earseMinus = True
+        self.Error = False
+
+    def memorize(self, char):
+
+        self.IsMemorized = True
+        value = float(self.Display)
+
+        if self.IsNegative:
+            value *= -1
+
+        if char[1] == "+":
+            self.__memoryRegister += value
+        else:
+            self.__memoryRegister -= value
+
+        self.__swapNumber = True
+        self.__decimalSign = False
+        self.__earseMinus = True
+
+    def restore(self, char):
+        self.registerToDisplay(self.__memoryRegister)
+
+    def sqrt(self,char):
+        value = float(self.Display)
+        if self.IsNegative:
+            self.IsNegative = False
+            self.Display = "0"
+            self.Error = True
+            return None
+        self.registerToDisplay(math.sqrt(value))
+
+    def percent(self, char):
+        if self.__lastSign == '=':
+            return None
+        elif self.__lastSign == "/" or self.__lastSign == "x":
+            self.Display = str(float(self.Display) / 100)
+            self.typeSign(char)
+        elif self.__lastSign == "+" or self.__lastSign == "-":
+            self.Display = str(self.__countRegister * (float(self.Display) / 100))
+            self.typeSign(char)
