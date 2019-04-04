@@ -13,6 +13,8 @@ class Calculator():
         self.IsNegative = False
         self.IsMemorized = False
         self.Error = False
+        self.__restorePressed = False
+        self.__clearPressed = False
 
     def Press(self, char):
 
@@ -46,6 +48,8 @@ class Calculator():
         func(char)
 
     def typeNumber(self, char):
+        self.__clearPressed = False
+        self.__restorePressed = False
         if char == '0' and len(self.Display) == 1 and self.Display[0] == '0':
             pass
         elif self.__swapNumber:
@@ -58,6 +62,8 @@ class Calculator():
             self.Display += char
 
     def decimalChar(self, char):
+        self.__clearPressed = False
+        self.__restorePressed = False
         if self.__decimalSign is False:
             if self.__swapNumber:
                 self.Display = "0"
@@ -85,6 +91,8 @@ class Calculator():
 
         self.__swapNumber = True
         self.__decimalSign = False
+        self.__clearPressed = False
+        self.__restorePressed = False
 
     def proceed(self, char):
         value = float(self.Display)
@@ -94,7 +102,7 @@ class Calculator():
 
         if char == "=":
             self.__countRegister = value
-        elif self.__swapNumber:
+        elif self.__swapNumber and self.__restorePressed is False:
             return None
         elif char == '+':
             self.__countRegister += value
@@ -118,15 +126,22 @@ class Calculator():
             self.Display = str(int(value))
 
     def clear(self, char):
+        self.__restorePressed = False
+        if self.__clearPressed is False:
+            self.__clearPressed = True
+        else:
+            self.__memoryRegister = 0
+            self.IsMemorized = False
         self.Display = "0"
         self.__decimalSign = False
         self.__swapNumber = True
         self.IsNegative = False
         self.__earseMinus = True
+        self.__restorePressed = False
         self.Error = False
 
     def memorize(self, char):
-
+        self.__restorePressed = False
         self.IsMemorized = True
         value = float(self.Display)
 
@@ -143,9 +158,17 @@ class Calculator():
         self.__earseMinus = True
 
     def restore(self, char):
+        self.__clearPressed = False
         self.registerToDisplay(self.__memoryRegister)
+        if self.__restorePressed is False:
+            self.__restorePressed = True
+        else:
+            self.__memoryRegister = 0
+            self.IsMemorized = False
 
     def sqrt(self,char):
+        self.__clearPressed = False
+        self.__restorePressed = False
         value = float(self.Display)
         if self.IsNegative:
             self.IsNegative = False
@@ -155,6 +178,8 @@ class Calculator():
         self.registerToDisplay(math.sqrt(value))
 
     def percent(self, char):
+        self.__clearPressed = False
+        self.__restorePressed = False
         if self.__lastSign == '=':
             return None
         elif self.__lastSign == "/" or self.__lastSign == "x":

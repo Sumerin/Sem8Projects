@@ -296,6 +296,25 @@ class CalculatorTest(unittest.TestCase):
         self.assertEqual("0", self.calc.Display)
         self.assertFalse(self.calc.IsNegative)
 
+    def test_Clear_memory(self):
+        self.calc.Press("-")
+        self.calc.Press("5")
+        self.calc.Press("M-")
+        self.calc.Press("C/CE")
+        self.assertEqual("0", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+        self.assertTrue(self.calc.IsMemorized)
+
+    def test_Clear_memory2(self):
+        self.calc.Press("-")
+        self.calc.Press("5")
+        self.calc.Press("M-")
+        self.calc.Press("C/CE")
+        self.calc.Press("C/CE")
+        self.assertEqual("0", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+        self.assertFalse(self.calc.IsMemorized)
+
     def test_input_after_Clear(self):
         self.calc.Press("-")
         self.calc.Press("5")
@@ -373,6 +392,43 @@ class CalculatorTest(unittest.TestCase):
         self.calc.Press("3")
         self.assertEqual("3", self.calc.Display)
         self.assertFalse(self.calc.IsNegative)
+        self.assertTrue(self.calc.IsMemorized)
+
+    def test_value_after_MRC2(self):
+        self.calc.Press("4")
+        self.calc.Press("M+")
+        self.calc.Press("-")
+        self.calc.Press("5")
+        self.calc.Press("M+")
+        self.calc.Press("MRC")
+        self.calc.Press("MRC")
+        self.assertEqual("1", self.calc.Display)
+        self.assertTrue(self.calc.IsNegative)
+        self.assertFalse(self.calc.IsMemorized)
+
+    def test_value_after_MRC3(self):
+        self.calc.Press("4")
+        self.calc.Press("M+")
+        self.calc.Press("-")
+        self.calc.Press("5")
+        self.calc.Press("M+")
+        self.calc.Press("MRC")
+        self.calc.Press("5")
+        self.calc.Press("MRC")
+        self.assertEqual("1", self.calc.Display)
+        self.assertTrue(self.calc.IsNegative)
+        self.assertTrue(self.calc.IsMemorized)
+
+    def test_multiply_after_MRC(self):
+        self.calc.Press("4")
+        self.calc.Press("M+")
+        self.calc.Press("2")
+        self.calc.Press("x")
+        self.calc.Press("MRC")
+        self.calc.Press("=")
+        self.assertEqual("8", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+        self.assertTrue(self.calc.IsMemorized)
 
     def test_sqrt(self):
         self.calc.Press("4")

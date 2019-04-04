@@ -9,32 +9,24 @@ class CalculatorViewer( Gtk.Window ):
 
     def __init__( self):
         super().__init__( title="Sumkowy Kalkulator", window_position = Gtk.WindowPosition.CENTER )
-        self.set_default_size( 320, 200 )
+        self.set_default_size( 400, 300 )
         self.set_resizable(True)
         self.__calculator = Calculator()
         self.__equatation_label = Gtk.Label(self.__calculator.Display, halign = Gtk.Align.END)
         self.__icons = Gtk.DrawingArea()
         self.__buttonMatrix = self.createButtons()
-        self.__memory_visible = True
-        self.__minus_visible = True
-        self.__error_visible = True
+        self.__memory_visible = False
+        self.__minus_visible = False
+        self.__error_visible = False
         self.connect('check-resize', self.resizeEvent)
-
 
         self.__icons.connect("draw",self.paint)
         self.__icons.set_size_request(30,80)
-        # iconwidth = 0.05
-        # self.__icons.setMaximumWidth(self.width()*iconwidth)
-        # self.__icons.setMinimumHeight(60)
 
         b1 = Gtk.Box(orientation= Gtk.Orientation.VERTICAL)
         screen = Gtk.Box(orientation= Gtk.Orientation.HORIZONTAL)
-        # lScreen = Gtk.Box(orientation= Gtk.Orientation.VERTICAL)
         screen.pack_start(self.__icons, False, True, 0)
-        # rScreen = Gtk.Box(orientation= Gtk.Orientation.VERTICAL)
         screen.pack_start(self.__equatation_label, True, True, 0)
-        # screen.pack_start(lScreen, False, True, 0)
-        # screen.pack_start(rScreen, False, True, 0)
 
         b1.pack_start(screen, True, True, 0)
         buttonLayout = Gtk.Grid()
@@ -48,17 +40,6 @@ class CalculatorViewer( Gtk.Window ):
             row_idx += 1
         b1.pack_start(buttonLayout, False, True, 0)
         self.add(b1)
-
-    # def resizeEvent(self, QResizeEvent):
-    #     iconwidth = 0.05
-    #     self.__icons.setMaximumWidth(self.width() * iconwidth)
-    #
-    #     fontSize = self.height()*0.1
-    #     font = QtGui.QFont("Times", fontSize, QtGui.QFont.Bold)
-    #     self.__equatation_label.setFont(font)
-    #
-    # def sizeHint( self ):
-    #     return QtCore.QSize( 400, 300 )
 
     def createButtons(self):
 
@@ -104,8 +85,8 @@ class CalculatorViewer( Gtk.Window ):
     def createButton(self,char, rowspan = 1, colspan=1):
         button = Gtk.Button(char)
         button.connect("clicked", self.make_calluser(char))
-        button.set_hexpand(True)# (QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding);
-        button.set_vexpand(True)# (QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding);
+        button.set_hexpand(True)
+        button.set_vexpand(True)
         return [button,rowspan,colspan]
 
     def make_calluser(self, name):
@@ -119,9 +100,10 @@ class CalculatorViewer( Gtk.Window ):
         def calluser(button):
             self.__calculator.Press(name)
             self.__equatation_label.set_text(self.__calculator.Display)
-            # self.__icons.setMinusVisible(self.__calculator.IsNegative)
-            # self.__icons.setErrorVisible(self.__calculator.Error)
-            # self.__icons.setMemoryVisible(self.__calculator.IsMemorized)
+            self.__minus_visible = self.__calculator.IsNegative
+            self.__error_visible = self.__calculator.Error
+            self.__memory_visible = self.__calculator.IsMemorized
+            self.queue_draw()
         return calluser
 
     def paint( self, widget, context ):
@@ -129,10 +111,6 @@ class CalculatorViewer( Gtk.Window ):
 
         middle = h / 2
 
-        penSize = self.get_allocated_width() * 0.1
-
-        if penSize > 5:
-            penSize = 5
         context.set_source_rgb(0, 0, 0)
 
         memory_h_mid = middle - middle / 2
@@ -173,17 +151,24 @@ class CalculatorViewer( Gtk.Window ):
             context.move_to(error_w_mid, error_h_lShlash_start)
             context.line_to(error_longer_end, error_h_lShlash_start)
 
+            context.move_to(error_w_mid, error_h_lShlash_end)
+            context.line_to(error_longer_end, error_h_lShlash_end)
+
+            context.move_to(error_w_mid, error_h_mid)
+            context.line_to(error_mid_end, error_h_mid)
+
             context.stroke()
-            # p.drawLine(error_w_mid, error_h_lShlash_end, error_longer_end, error_h_lShlash_end)
-            # p.drawLine(error_w_mid, error_h_mid, error_mid_end, error_h_mid)
 
     def resizeEvent(self, window):
+        if self.get_allocated_height() < 300 or self.get_allocated_width() < 400:
+            self.set_size_request(400, 300)
+            return None
         fontSize = self.get_allocated_height() * 0.1
         if fontSize != 0:
             font = Pango.FontDescription("Times Bold {}".format(int(fontSize)))
             self.__equatation_label.modify_font(font)
-
-        self.__icons.set_size_request(self.get_allocated_width()*0.1,80)
+        value = self.get_allocated_width() * 0.1
+        self.__icons.set_size_request(value,80)
 
 
 

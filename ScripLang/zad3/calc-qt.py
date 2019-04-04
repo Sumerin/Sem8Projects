@@ -36,7 +36,6 @@ class IconsDrawer(QtWidgets.QWidget):
             p.drawLine(memory_w_mid, memory_h_mid, memory_w_rSlash, memory_h_Slash_end)
             p.drawLine(memory_w_rSlash, memory_h_Slash_start, memory_w_rSlash, memory_h_Slash_end)
 
-
         minus_h = middle
         minus_w_start = 5
         minus_w_end = w - 5
@@ -50,7 +49,6 @@ class IconsDrawer(QtWidgets.QWidget):
         error_h_lShlash_end = h - 10
         error_longer_end = w - 5
         error_mid_end = w / 2
-
 
         if self.__error_visible:
             p.drawLine(error_w_mid, error_h_lShlash_start, error_w_mid, error_h_lShlash_end)
@@ -86,12 +84,20 @@ class CalculatorViewer( QtWidgets.QDialog ):
 
         self.__equatation_label.setFont(font)
 
-        iconwidth = 0.05
+        iconwidth = 0.1
         self.__icons.setMaximumWidth(self.width()*iconwidth)
-        self.__icons.setMinimumHeight(60)
+        self.__icons.setMinimumHeight(80)
 
+        extractAction = QtWidgets.QAction("&Wyjscie", self)
+        extractAction.setShortcut("Ctrl+Q")
+        extractAction.setStatusTip('Zamknij aplikacje')
+        extractAction.triggered.connect(exit)
 
         b1 = QtWidgets.QVBoxLayout()
+        mainMenu = QtWidgets.QMenuBar()
+        fileMenu = mainMenu.addMenu('&Plik')
+        fileMenu.addAction(extractAction)
+        b1.setMenuBar(mainMenu)
         screen = QtWidgets.QHBoxLayout()
         lScreen = QtWidgets.QVBoxLayout()
         lScreen.addWidget(self.__icons)
