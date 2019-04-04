@@ -6,27 +6,69 @@ class IconsDrawer(QtWidgets.QWidget):
 
     def __init__( self):
         super().__init__()
-        # self.setSizePolicy( QtWidgets.QSizePolicy( QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding ) )
-        self.__m_visible = False
+        self.__memory_visible = False
+        self.__error_visible = False
         self.__minus_visible = False
 
     def paintEvent( self, event ):
         w, h = self.width(), self.height()
         middle = h/2
-        minus_h = middle + middle/2
-        minus_w_start = 5
-        minus_w_end = w - 5
+
+        penSize = self.width()*0.1
+
+        if penSize > 5:
+            penSize = 5
+
         p = QtGui.QPainter( self )
-        p.setPen( QtGui.QPen(QtCore.Qt.black, 5) )
+        p.setPen( QtGui.QPen(QtCore.Qt.black, penSize) )
         p.setBrush( QtGui.QBrush( QtGui.QColor( 0, 0, 0 ) ) )
 
+        memory_h_mid = middle - middle / 2
+        memory_w_mid = w / 2
+        memory_w_lSlash = memory_w_mid / 2
+        memory_w_rSlash = memory_w_mid + memory_w_mid / 2
+        memory_h_Slash_start = memory_h_mid + memory_h_mid - 10
+        memory_h_Slash_end = 10
+
+        if self.__memory_visible:
+            p.drawLine(memory_w_lSlash, memory_h_Slash_start, memory_w_lSlash, memory_h_Slash_end)
+            p.drawLine(memory_w_lSlash, memory_h_Slash_end, memory_w_mid, memory_h_mid)
+            p.drawLine(memory_w_mid, memory_h_mid, memory_w_rSlash, memory_h_Slash_end)
+            p.drawLine(memory_w_rSlash, memory_h_Slash_start, memory_w_rSlash, memory_h_Slash_end)
+
+
+        minus_h = middle
+        minus_w_start = 5
+        minus_w_end = w - 5
+
         if self.__minus_visible:
-            p.drawLine( minus_w_start, minus_h, minus_w_end, minus_h)
+            p.drawLine(minus_w_start, minus_h, minus_w_end, minus_h)
+
+        error_h_mid = middle + middle / 2
+        error_w_mid = 5
+        error_h_lShlash_start = middle + 10
+        error_h_lShlash_end = h - 10
+        error_longer_end = w - 5
+        error_mid_end = w / 2
+
+
+        if self.__error_visible:
+            p.drawLine(error_w_mid, error_h_lShlash_start, error_w_mid, error_h_lShlash_end)
+            p.drawLine(error_w_mid, error_h_lShlash_start, error_longer_end, error_h_lShlash_start)
+            p.drawLine(error_w_mid, error_h_lShlash_end, error_longer_end, error_h_lShlash_end)
+            p.drawLine(error_w_mid, error_h_mid, error_mid_end, error_h_mid)
 
     def setMinusVisible(self, bool):
         self.__minus_visible = bool
         self.repaint()
 
+    def setErrorVisible(self, bool):
+        self.__error_visible = bool
+        self.repaint()
+
+    def setMemoryVisible(self, bool):
+        self.__memory_visible = bool
+        self.repaint()
 
 class CalculatorViewer( QtWidgets.QDialog ):
 
@@ -39,7 +81,15 @@ class CalculatorViewer( QtWidgets.QDialog ):
         self.__icons = IconsDrawer()
         self.__buttonMatrix = self.createButtons()
 
-        self.__icons.setMaximumWidth(20)
+        fontSize = self.height()*0.1
+        font = QtGui.QFont("Times", fontSize, QtGui.QFont.Bold)
+
+        self.__equatation_label.setFont(font)
+
+        iconwidth = 0.05
+        self.__icons.setMaximumWidth(self.width()*iconwidth)
+        self.__icons.setMinimumHeight(60)
+
 
         b1 = QtWidgets.QVBoxLayout()
         screen = QtWidgets.QHBoxLayout()
@@ -63,7 +113,14 @@ class CalculatorViewer( QtWidgets.QDialog ):
         b1.addLayout(buttonLayout)
         self.setLayout(b1)
 
-    # Domyślny rozmiar okna.
+    def resizeEvent(self, QResizeEvent):
+        iconwidth = 0.05
+        self.__icons.setMaximumWidth(self.width() * iconwidth)
+
+        fontSize = self.height()*0.1
+        font = QtGui.QFont("Times", fontSize, QtGui.QFont.Bold)
+        self.__equatation_label.setFont(font)
+
     def sizeHint( self ):
         return QtCore.QSize( 400, 300 )
 
@@ -117,11 +174,17 @@ class CalculatorViewer( QtWidgets.QDialog ):
     def make_calluser(self, name):
         if name == "\u00F7":
             name = "/"
+        elif name == "\u0025":
+            name = "p"
+        elif name == "\u221A":
+            name = "sqrt"
 
         def calluser():
             self.__calculator.Press(name)
             self.__equatation_label.setText(self.__calculator.Display)
             self.__icons.setMinusVisible(self.__calculator.IsNegative)
+            self.__icons.setErrorVisible(self.__calculator.Error)
+            self.__icons.setMemoryVisible(self.__calculator.IsMemorized)
         return calluser
 
 

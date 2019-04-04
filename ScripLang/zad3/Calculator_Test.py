@@ -388,6 +388,15 @@ class CalculatorTest(unittest.TestCase):
         self.assertFalse(self.calc.IsNegative)
         self.assertTrue(self.calc.Error)
 
+    def test_div0_error(self):
+        self.calc.Press("4")
+        self.calc.Press("/")
+        self.calc.Press("0")
+        self.calc.Press("=")
+        self.assertEqual("0", self.calc.Display)
+        self.assertFalse(self.calc.IsNegative)
+        self.assertTrue(self.calc.Error)
+
     def test_percent_multiply(self):
         self.calc.Press("1")
         self.calc.Press("0")
@@ -407,6 +416,15 @@ class CalculatorTest(unittest.TestCase):
         self.calc.Press("p")
         self.assertEqual("5000", self.calc.Display)
         self.assertFalse(self.calc.IsNegative)
+
+    def test_div0_error(self):
+        self.calc.Press("4")
+        self.calc.Press("/")
+        self.calc.Press("0")
+        self.calc.Press("=")
+        self.calc.Press("4")
+        self.assertEqual("0", self.calc.Display)
+        self.assertTrue(self.calc.Error)
 
 
 if __name__ == '__main__':

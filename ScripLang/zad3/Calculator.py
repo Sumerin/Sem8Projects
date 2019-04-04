@@ -16,7 +16,7 @@ class Calculator():
 
     def Press(self, char):
 
-        if self.Error and char == "C/CE":
+        if self.Error and char != "C/CE":
             return None
         switcher = {
             "0": self.typeNumber,
@@ -71,9 +71,14 @@ class Calculator():
             self.__earseMinus = False
             return None
 
-        self.proceed(self.__lastSign)
-        self.registerToDisplay(self.__countRegister)
-        self.__lastSign = char
+        try:
+            self.proceed(self.__lastSign)
+            self.registerToDisplay(self.__countRegister)
+            self.__lastSign = char
+
+        except:
+            self.Display = "0"
+            self.Error = True
 
         if char == '=':
             self.__countRegister = 0
