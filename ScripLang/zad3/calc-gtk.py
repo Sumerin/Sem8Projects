@@ -2,6 +2,7 @@
 from gi import require_version
 require_version( 'Gtk', '3.0' )
 from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import Pango
 from Calculator import  Calculator
 
@@ -18,12 +19,27 @@ class CalculatorViewer( Gtk.Window ):
         self.__memory_visible = False
         self.__minus_visible = False
         self.__error_visible = False
+        self.__menubar = Gtk.MenuBar()
+
+        acgroup = Gtk.AccelGroup()
+        self.add_accel_group(acgroup)
+
+        menu1 = Gtk.Menu()
+        file = Gtk.MenuItem("Plik")
+        item1 = Gtk.MenuItem("Wyjście")
+        item1.add_accelerator("activate", acgroup, ord('Q'), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
+        item1.connect('activate', self.exit)
+        file.set_submenu(menu1)
+        menu1.append(item1)
+        self.__menubar.append(file)
+
         self.connect('check-resize', self.resizeEvent)
 
         self.__icons.connect("draw",self.paint)
         self.__icons.set_size_request(30,80)
 
         b1 = Gtk.Box(orientation= Gtk.Orientation.VERTICAL)
+        b1.pack_start(self.__menubar, False, False,0)
         screen = Gtk.Box(orientation= Gtk.Orientation.HORIZONTAL)
         screen.pack_start(self.__icons, False, True, 0)
         screen.pack_start(self.__equatation_label, True, True, 0)
@@ -40,6 +56,9 @@ class CalculatorViewer( Gtk.Window ):
             row_idx += 1
         b1.pack_start(buttonLayout, False, True, 0)
         self.add(b1)
+
+    def exit(self, a):
+        exit()
 
     def createButtons(self):
 
