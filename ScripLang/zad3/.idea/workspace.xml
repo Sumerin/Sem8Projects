@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="80c1e9ba-07f1-4ed3-a1c1-b394c497ee0c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calc-gtk.py" beforeDir="false" afterPath="$PROJECT_DIR$/calc-gtk.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,35 +24,13 @@
     <expand />
     <select />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/calc-qt.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="450">
-                    <caret line="93" column="44" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
-                    <folding>
-                      <element signature="e#0#42#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/calc-gtk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="505">
+              <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -70,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Calculator_Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="895">
-              <caret line="468" column="28" lean-forward="true" selection-start-line="468" selection-start-column="28" selection-end-line="468" selection-end-column="28" />
+            <state relative-caret-position="7005">
+              <caret line="468" column="28" selection-start-line="468" selection-start-column="28" selection-end-line="468" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -79,7 +56,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Calculator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
+            <state relative-caret-position="1410">
               <caret line="94" column="37" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
             </state>
           </provider>
@@ -102,16 +79,17 @@
       <list>
         <option value="$PROJECT_DIR$/Calculator_Test.py" />
         <option value="$PROJECT_DIR$/Calculator.py" />
-        <option value="$PROJECT_DIR$/calc-qt.py" />
         <option value="$PROJECT_DIR$/calc-gtk.py" />
+        <option value="$PROJECT_DIR$/calc-qt.py" />
+        <option value="$PROJECT_DIR$/Solver.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="27" />
-    <option name="width" value="1360" />
-    <option name="height" value="1000" />
+    <option name="x" value="298" />
+    <option name="y" value="158" />
+    <option name="width" value="1391" />
+    <option name="height" value="791" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -162,7 +140,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.calc-gtk">
+  <component name="RunManager" selected="Python.Solver">
+    <configuration name="Solver" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="zad3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Solver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="calc-gtk" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="zad3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -222,21 +222,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for Calculator_Test.CalculatorTest.test_value_after_MRC" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="zad3" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;Calculator_Test.CalculatorTest.test_value_after_MRC&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests in Calculator_Test.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="zad3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -255,17 +240,17 @@
     <list>
       <item itemvalue="Python.calc-qt" />
       <item itemvalue="Python.calc-gtk" />
+      <item itemvalue="Python.Solver" />
       <item itemvalue="Python tests.Unittests in Calculator_Test.py" />
-      <item itemvalue="Python tests.Unittests for Calculator_Test.CalculatorTest.test_value_after_MRC" />
       <item itemvalue="Python tests.Unittests for Calculator_Test.CalculatorTest.test_multiply_after_MRC" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.calc-gtk" />
+        <item itemvalue="Python.Solver" />
         <item itemvalue="Python.calc-qt" />
+        <item itemvalue="Python.calc-gtk" />
         <item itemvalue="Python tests.Unittests in Calculator_Test.py" />
         <item itemvalue="Python tests.Unittests for Calculator_Test.CalculatorTest.test_multiply_after_MRC" />
-        <item itemvalue="Python tests.Unittests for Calculator_Test.CalculatorTest.test_value_after_MRC" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +274,9 @@
       <workItem from="1554399775129" duration="2442000" />
       <workItem from="1554402995553" duration="1639000" />
       <workItem from="1554408227213" duration="3671000" />
-      <workItem from="1554479026849" duration="3441000" />
+      <workItem from="1554479026849" duration="3812000" />
+      <workItem from="1554831115868" duration="130000" />
+      <workItem from="1554966703331" duration="91000" />
     </task>
     <servers />
   </component>
@@ -326,18 +313,17 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52868000" />
+    <option name="totallyTimeSpent" value="53460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21693414" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21361372" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.3174946" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4994664" weight="0.3084995" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.409234" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -382,7 +368,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_sum_and_equal_many_times.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_sum_and_equal_many_times Coverage Results" MODIFIED="1553958522152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_in_Calculator_Test_py.coverage" NAME="Unittests in Calculator_Test.py Coverage Results" MODIFIED="1554410889797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/zad3$calc_qt.coverage" NAME="calc-qt Coverage Results" MODIFIED="1554479043238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zad3$calc_qt.coverage" NAME="calc-qt Coverage Results" MODIFIED="1554484130047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$gv_qt.coverage" NAME="gv-qt Coverage Results" MODIFIED="1553763388748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example/graphs" />
     <SUITE FILE_PATH="coverage/zad3$gv_gtk.coverage" NAME="gv-gtk Coverage Results" MODIFIED="1553763817093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example/graphs" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_negative_values_equatation.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_negative_values_equatation Coverage Results" MODIFIED="1553959501648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -393,6 +379,7 @@
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_decimal_Number_1.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_decimal_Number_1 Coverage Results" MODIFIED="1553949908383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_divide_and_substract.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_divide_and_substract Coverage Results" MODIFIED="1553958266558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_substract_input_two_values.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_substract_input_two_values Coverage Results" MODIFIED="1553963721113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zad3$Solver.coverage" NAME="Solver Coverage Results" MODIFIED="1554831186415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_integer_sum_Input_second_value.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_integer_sum_Input_second_value Coverage Results" MODIFIED="1553949764234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_negative_values_equatation2.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_negative_values_equatation2 Coverage Results" MODIFIED="1553958596168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_integer_sum_two_values_with_addiction_sign.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_integer_sum_two_values_with_addiction_sign Coverage Results" MODIFIED="1553950144975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -446,23 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/graphs/gv-gtk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calc-qt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="93" column="44" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3/dist-packages/gi/module.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1545">
@@ -470,24 +440,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Calculator.py">
+    <entry file="file://$PROJECT_DIR$/Solver.py" />
+    <entry file="file://$PROJECT_DIR$/calc-qt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="94" column="37" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Calculator_Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="895">
-          <caret line="468" column="28" lean-forward="true" selection-start-line="468" selection-start-column="28" selection-end-line="468" selection-end-column="28" />
+        <state relative-caret-position="120">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/calc-gtk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="505">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/graphs/gv-gtk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calculator_Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7005">
+          <caret line="468" column="28" selection-start-line="468" selection-start-column="28" selection-end-line="468" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calculator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1410">
+          <caret line="94" column="37" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
         </state>
       </provider>
     </entry>
