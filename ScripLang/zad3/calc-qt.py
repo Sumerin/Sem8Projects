@@ -68,11 +68,33 @@ class IconsDrawer(QtWidgets.QWidget):
         self.__memory_visible = bool
         self.repaint()
 
+
+class OpisViewer(QtWidgets.QDialog):
+
+    def __init__(self):
+        super().__init__(flags=QtCore.Qt.Window)
+        self.setWindowTitle("Opis Sumkowy Kalkulator")
+        self.__label = QtWidgets.QLabel("Aplikacja Sumkowy Kalkulator została stworzona na potrzeby przedmiotu \"Języki skryptowe i ich zastosowania\". Aplikacja umożliwia przeprowadzenie prostych operacji matematycznych. Interfejs graficzny wykonany w PyQt.")
+        self.__label.setWordWrap(True)
+        self.__label.setAlignment(QtCore.Qt.AlignJustify)
+        self.__close_button = QtWidgets.QPushButton("zamknij")
+
+        b1 = QtWidgets.QVBoxLayout()
+        self.__img = QtWidgets.QLabel()
+        pixmap = QtGui.QPixmap("CalculatorIcon.png")
+        pixmap = pixmap.scaled(256, 100)
+        self.__img.setPixmap(pixmap)
+        self.__img.setAlignment(QtCore.Qt.AlignHCenter)
+        b1.addWidget(self.__img)
+        b1.addWidget(self.__label)
+        b1.addWidget(self.__close_button)
+        self.setLayout(b1)
+
 class CalculatorViewer( QtWidgets.QDialog ):
 
     def __init__( self):
-        super().__init__( flags = QtCore.Qt.Window )
-        self.setWindowTitle( "Sumkowy Kalkulator" )
+        super().__init__(flags=QtCore.Qt.Window)
+        self.setWindowTitle("Sumkowy Kalkulator")
         self.__index = 0
         self.__calculator = Calculator()
         self.__equatation_label = QtWidgets.QLabel(self.__calculator.Display)
@@ -88,6 +110,11 @@ class CalculatorViewer( QtWidgets.QDialog ):
         self.__icons.setMaximumWidth(self.width()*iconwidth)
         self.__icons.setMinimumHeight(80)
 
+        extractAction0 = QtWidgets.QAction("&Opis...", self)
+        extractAction0.setShortcut("Ctrl+O")
+        extractAction0.setStatusTip('Opis aplikacji')
+        extractAction0.triggered.connect(self.showOpis)
+
         extractAction = QtWidgets.QAction("&Wyjscie", self)
         extractAction.setShortcut("Ctrl+Q")
         extractAction.setStatusTip('Zamknij aplikacje')
@@ -96,6 +123,7 @@ class CalculatorViewer( QtWidgets.QDialog ):
         b1 = QtWidgets.QVBoxLayout()
         mainMenu = QtWidgets.QMenuBar()
         fileMenu = mainMenu.addMenu('&Plik')
+        fileMenu.addAction(extractAction0)
         fileMenu.addAction(extractAction)
         b1.setMenuBar(mainMenu)
         screen = QtWidgets.QHBoxLayout()
@@ -118,6 +146,10 @@ class CalculatorViewer( QtWidgets.QDialog ):
             row_idx += 1
         b1.addLayout(buttonLayout)
         self.setLayout(b1)
+
+    def showOpis(self):
+        w = OpisViewer()
+        w.exec_()
 
     def resizeEvent(self, QResizeEvent):
         iconwidth = 0.05

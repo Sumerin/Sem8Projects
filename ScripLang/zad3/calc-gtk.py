@@ -1,19 +1,48 @@
 
 from gi import require_version
-require_version( 'Gtk', '3.0' )
+require_version('Gtk', '3.0')
 from gi.repository import Gtk
-from gi.repository import Gdk
+from gi.repository import Gdk, GdkPixbuf
 from gi.repository import Pango
-from Calculator import  Calculator
+from Calculator import Calculator
+
+class OpisViewer( Gtk.Window ):
+    def __init__(self):
+        super().__init__(title="Opis Sumkowy kalkulator", window_position=Gtk.WindowPosition.CENTER)
+        self.__label = Gtk.Label("Aplikacja Sumkowy Kalkulator została stworzona na potrzeby przedmiotu \"Języki skryptowe i ich zastosowania\". Aplikacja umożliwia przeprowadzenie prostych operacji matematycznych. Interfejs graficzny wykonany w PyGtk.")
+        self.__label.set_line_wrap(True)
+        self.__label.set_max_width_chars(60)
+        self.__label.set_justify(Gtk.Justification.FILL)
+        self.__close_button = Gtk.Button("Zamknij")
+        self.__close_button.connect("clicked", self.closeAdapter)
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale(
+            filename="CalculatorIcon.png",
+            width=256,
+            height=128,
+            preserve_aspect_ratio=True)
+        self.__img = Gtk.Image.new_from_pixbuf(pixbuf)
+        b0 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        b1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        b1.set_homogeneous(False)
+        b1.pack_start(self.__img, True, True, 0)
+        b1.pack_start(self.__label, True, True, 0)
+        b1.pack_start(self.__close_button, True, True, 10)
+        b0.pack_start(b1, True, True, 10)
+        self.add(b0)
+
+    def closeAdapter(self, a):
+        self.close()
+
+
 
 class CalculatorViewer( Gtk.Window ):
 
     def __init__( self):
-        super().__init__( title="Sumkowy Kalkulator", window_position = Gtk.WindowPosition.CENTER )
+        super().__init__( title="Sumkowy Kalkulator", window_position=Gtk.WindowPosition.CENTER )
         self.set_default_size( 400, 300 )
         self.set_resizable(True)
         self.__calculator = Calculator()
-        self.__equatation_label = Gtk.Label(self.__calculator.Display, halign = Gtk.Align.END)
+        self.__equatation_label = Gtk.Label(self.__calculator.Display, halign=Gtk.Align.END)
         self.__icons = Gtk.DrawingArea()
         self.__buttonMatrix = self.createButtons()
         self.__memory_visible = False
@@ -26,17 +55,21 @@ class CalculatorViewer( Gtk.Window ):
 
         menu1 = Gtk.Menu()
         file = Gtk.MenuItem("Plik")
+        item0 = Gtk.MenuItem("Opis...")
+        item0.add_accelerator("activate", acgroup, ord('O'), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
+        item0.connect('activate', self.showOpis)
         item1 = Gtk.MenuItem("Wyjście")
         item1.add_accelerator("activate", acgroup, ord('Q'), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
         item1.connect('activate', self.exit)
         file.set_submenu(menu1)
+        menu1.append(item0)
         menu1.append(item1)
         self.__menubar.append(file)
 
         self.connect('check-resize', self.resizeEvent)
 
-        self.__icons.connect("draw",self.paint)
-        self.__icons.set_size_request(30,80)
+        self.__icons.connect("draw", self.paint)
+        self.__icons.set_size_request(30, 80)
 
         b1 = Gtk.Box(orientation= Gtk.Orientation.VERTICAL)
         b1.pack_start(self.__menubar, False, False,0)
@@ -47,7 +80,7 @@ class CalculatorViewer( Gtk.Window ):
         b1.pack_start(screen, True, True, 0)
         buttonLayout = Gtk.Grid()
 
-        row_idx = 0;
+        row_idx = 0
         for button_row in self.__buttonMatrix:
             col_idx = 0
             for [button, rowspan, colspan] in button_row:
@@ -56,6 +89,10 @@ class CalculatorViewer( Gtk.Window ):
             row_idx += 1
         b1.pack_start(buttonLayout, False, True, 0)
         self.add(b1)
+
+    def showOpis(self, a):
+        opisW = OpisViewer()
+        opisW.show_all()
 
     def exit(self, a):
         exit()

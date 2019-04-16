@@ -21,7 +21,7 @@ class BinPackingTest(unittest.TestCase):
 
         self.assertEqual(3, usedBins)
 
-    def test_NoSolution(self):
+    def test_NoSolution(self):#prints warning to STDERR
         weight = [2, 2, 2]
         bincapicity = 3
         maxBins = 1
@@ -84,7 +84,7 @@ class BinPackingTest(unittest.TestCase):
 
         self.assertEqual(5, usedBins)
 
-    def test_9(self):
+    def test_10_with_debug(self):
         weight = [18, 21, 2, 48, 58, 42]
         bincapicity = 60
         maxBins = 25
