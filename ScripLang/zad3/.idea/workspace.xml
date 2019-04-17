@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80c1e9ba-07f1-4ed3-a1c1-b394c497ee0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../AOD_proj/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AOD_proj/multiBinTests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AOD_proj/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AOD_proj/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AOD_proj/binPacking.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AOD_proj/binPacking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AOD_proj/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AOD_proj/singleBinTests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calc-gtk.py" beforeDir="false" afterPath="$PROJECT_DIR$/calc-gtk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOD_proj/multiBinTests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOD_proj/singleBinTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../AOD_proj/singleBinTests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calc-qt.py" beforeDir="false" afterPath="$PROJECT_DIR$/calc-qt.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,12 +33,12 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/calc-qt.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="437">
-                    <caret line="85" column="36" lean-forward="true" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="36" />
+                  <state relative-caret-position="653">
+                    <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
                     <folding>
                       <element signature="e#0#42#0" expanded="true" />
                     </folding>
@@ -50,7 +49,7 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1247971763/PyQt5/QtGui/QPixmap.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="399">
+                  <state relative-caret-position="2025">
                     <caret line="139" column="22" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="22" />
                   </state>
                 </provider>
@@ -67,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/example/graphs/gv-gtk.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1065">
-              <caret line="71" column="55" lean-forward="true" selection-start-line="71" selection-start-column="55" selection-end-line="71" selection-end-column="55" />
+              <caret line="71" column="55" selection-start-line="71" selection-start-column="55" selection-end-line="71" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -75,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Calculator_Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
+            <state relative-caret-position="7005">
               <caret line="468" column="28" selection-start-line="468" selection-start-column="28" selection-end-line="468" selection-end-column="28" />
             </state>
           </provider>
@@ -122,7 +121,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="298" />
     <option name="y" value="158" />
     <option name="width" value="1391" />
@@ -134,6 +133,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,7 +156,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -177,7 +176,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.calc-qt">
+  <component name="RunManager" selected="Python.calc-gtk">
     <configuration name="Solver" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="zad3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -283,8 +282,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.calc-qt" />
         <item itemvalue="Python.calc-gtk" />
+        <item itemvalue="Python.calc-qt" />
         <item itemvalue="Python.Solver" />
         <item itemvalue="Python tests.Unittests in Calculator_Test.py" />
         <item itemvalue="Python tests.Unittests for Calculator_Test.CalculatorTest.test_multiply_after_MRC" />
@@ -315,6 +314,8 @@
       <workItem from="1554831115868" duration="130000" />
       <workItem from="1554966703331" duration="91000" />
       <workItem from="1555153735517" duration="9051000" />
+      <workItem from="1555415425505" duration="24000" />
+      <workItem from="1555522349019" duration="136000" />
     </task>
     <servers />
   </component>
@@ -351,18 +352,17 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62511000" />
+    <option name="totallyTimeSpent" value="62671000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="7" />
-    <editor active="true" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21582733" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22080797" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.30777538" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4994664" weight="0.30777538" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40820736" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -392,13 +392,8 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/calc-gtk.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/calc-qt.py</url>
-          <line>150</line>
+          <line>151</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
@@ -407,7 +402,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_sum_and_equal_many_times.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_sum_and_equal_many_times Coverage Results" MODIFIED="1553958522152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_in_Calculator_Test_py.coverage" NAME="Unittests in Calculator_Test.py Coverage Results" MODIFIED="1554410889797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/zad3$calc_qt.coverage" NAME="calc-qt Coverage Results" MODIFIED="1555163943424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zad3$calc_qt.coverage" NAME="calc-qt Coverage Results" MODIFIED="1555522432994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$gv_qt.coverage" NAME="gv-qt Coverage Results" MODIFIED="1553763388748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example/graphs" />
     <SUITE FILE_PATH="coverage/zad3$gv_gtk.coverage" NAME="gv-gtk Coverage Results" MODIFIED="1553763817093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example/graphs" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_negative_values_equatation.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_negative_values_equatation Coverage Results" MODIFIED="1553959501648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -422,7 +417,7 @@
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_integer_sum_Input_second_value.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_integer_sum_Input_second_value Coverage Results" MODIFIED="1553949764234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_negative_values_equatation2.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_negative_values_equatation2 Coverage Results" MODIFIED="1553958596168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_integer_sum_two_values_with_addiction_sign.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_integer_sum_two_values_with_addiction_sign Coverage Results" MODIFIED="1553950144975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/zad3$calc_gtk.coverage" NAME="calc-gtk Coverage Results" MODIFIED="1555161449885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zad3$calc_gtk.coverage" NAME="calc-gtk Coverage Results" MODIFIED="1555522449247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_integer_sum_Input_first_value.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_integer_sum_Input_first_value Coverage Results" MODIFIED="1553949550461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zad3$Unittests_for_Calculator_Test_CalculatorTest_test_multiple_many_times.coverage" NAME="Unittests for Calculator_Test.CalculatorTest.test_multiple_many_times Coverage Results" MODIFIED="1553959348408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -480,6 +475,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Solver.py" />
+    <entry file="file://$PROJECT_DIR$/example/graphs/gv-gtk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="55" selection-start-line="71" selection-start-column="55" selection-end-line="71" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calculator_Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7005">
+          <caret line="468" column="28" selection-start-line="468" selection-start-column="28" selection-end-line="468" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Calculator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
@@ -487,17 +496,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Calculator_Test.py">
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1247971763/PyQt5/QtGui/QPixmap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="468" column="28" selection-start-line="468" selection-start-column="28" selection-end-line="468" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/graphs/gv-gtk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="55" lean-forward="true" selection-start-line="71" selection-start-column="55" selection-end-line="71" selection-end-column="55" />
+        <state relative-caret-position="2025">
+          <caret line="139" column="22" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -508,17 +510,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1247971763/PyQt5/QtGui/QPixmap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="139" column="22" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calc-qt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="85" column="36" lean-forward="true" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="36" />
+        <state relative-caret-position="653">
+          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>

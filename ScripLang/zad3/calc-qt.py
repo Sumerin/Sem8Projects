@@ -78,6 +78,7 @@ class OpisViewer(QtWidgets.QDialog):
         self.__label.setWordWrap(True)
         self.__label.setAlignment(QtCore.Qt.AlignJustify)
         self.__close_button = QtWidgets.QPushButton("zamknij")
+        self.__close_button.clicked.connect(self.close)
 
         b1 = QtWidgets.QVBoxLayout()
         self.__img = QtWidgets.QLabel()

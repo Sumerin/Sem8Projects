@@ -8,7 +8,7 @@ class BinPackingTest(unittest.TestCase):
         bincapicity = 2
         maxBins = 20
 
-        usedBins = binPacking.binPacking(weight, bincapicity, maxBins)
+        usedBins = binPacking.binPacking(weight, bincapicity, maxBins, True)
 
         self.assertEqual(3, usedBins)
 
@@ -89,6 +89,6 @@ class BinPackingTest(unittest.TestCase):
         bincapicity = 60
         maxBins = 25
 
-        usedBins = binPacking.binPacking(weight, bincapicity, maxBins, True)
+        usedBins = binPacking.binPacking(weight, bincapicity, maxBins, False)
 
         self.assertEqual(4, usedBins)
