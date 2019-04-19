@@ -48,6 +48,8 @@ class Calculator():
         func(char)
 
     def typeNumber(self, char):
+        if len(self.Display) > 10 and self.__swapNumber is False:
+            return None
         self.__clearPressed = False
         self.__restorePressed = False
         if char == '0' and len(self.Display) == 1 and self.Display[0] == '0':
@@ -124,6 +126,10 @@ class Calculator():
             self.Display = str(value)
         else:
             self.Display = str(int(value))
+
+        if len(self.Display) > 11:
+            self.Error = True
+            #self.Display = "0"
 
     def clear(self, char):
         self.__restorePressed = False

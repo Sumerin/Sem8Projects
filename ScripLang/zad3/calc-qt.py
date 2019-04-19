@@ -73,6 +73,11 @@ class OpisViewer(QtWidgets.QDialog):
 
     def __init__(self):
         super().__init__(flags=QtCore.Qt.Window)
+        self.setMaximumWidth(400)
+        self.setMaximumHeight(300)
+        self.setMinimumWidth(400)
+        self.setMinimumHeight(300)
+
         self.setWindowTitle("Opis Sumkowy Kalkulator")
         self.__label = QtWidgets.QLabel("Aplikacja Sumkowy Kalkulator została stworzona na potrzeby przedmiotu \"Języki skryptowe i ich zastosowania\". Aplikacja umożliwia przeprowadzenie prostych operacji matematycznych. Interfejs graficzny wykonany w PyQt.")
         self.__label.setWordWrap(True)
@@ -96,6 +101,11 @@ class CalculatorViewer( QtWidgets.QDialog ):
     def __init__( self):
         super().__init__(flags=QtCore.Qt.Window)
         self.setWindowTitle("Sumkowy Kalkulator")
+        self.setMaximumWidth(400)
+        self.setMaximumHeight(300)
+        self.setMinimumWidth(400)
+        self.setMinimumHeight(300)
+
         self.__index = 0
         self.__calculator = Calculator()
         self.__equatation_label = QtWidgets.QLabel(self.__calculator.Display)

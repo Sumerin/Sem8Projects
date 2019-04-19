@@ -482,6 +482,42 @@ class CalculatorTest(unittest.TestCase):
         self.assertEqual("0", self.calc.Display)
         self.assertTrue(self.calc.Error)
 
+    def test_div0_error2(self):
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("+")
+        self.assertEqual("99999999999", self.calc.Display)
+        self.assertFalse(self.calc.Error)
+
+    def test_div0_error3(self):
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("9")
+        self.calc.Press("+")
+        self.calc.Press("1")
+        self.calc.Press("=")
+        self.assertEqual("0", self.calc.Display)
+        self.assertTrue(self.calc.Error)
+
 
 if __name__ == '__main__':
     unittest.main()

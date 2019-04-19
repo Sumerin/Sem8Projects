@@ -9,6 +9,8 @@ from Calculator import Calculator
 class OpisViewer( Gtk.Window ):
     def __init__(self):
         super().__init__(title="Opis Sumkowy kalkulator", window_position=Gtk.WindowPosition.CENTER)
+        self.set_default_size(400, 300)
+        self.set_resizable(False)
         self.__label = Gtk.Label("Aplikacja Sumkowy Kalkulator została stworzona na potrzeby przedmiotu \"Języki skryptowe i ich zastosowania\". Aplikacja umożliwia przeprowadzenie prostych operacji matematycznych. Interfejs graficzny wykonany w PyGtk.")
         self.__label.set_line_wrap(True)
         self.__label.set_max_width_chars(60)
@@ -40,7 +42,7 @@ class CalculatorViewer( Gtk.Window ):
     def __init__( self):
         super().__init__( title="Sumkowy Kalkulator", window_position=Gtk.WindowPosition.CENTER )
         self.set_default_size( 400, 300 )
-        self.set_resizable(True)
+        self.set_resizable(False)
         self.__calculator = Calculator()
         self.__equatation_label = Gtk.Label(self.__calculator.Display, halign=Gtk.Align.END)
         self.__icons = Gtk.DrawingArea()
