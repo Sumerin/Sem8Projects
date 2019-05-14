@@ -515,9 +515,16 @@ class CalculatorTest(unittest.TestCase):
         self.calc.Press("+")
         self.calc.Press("1")
         self.calc.Press("=")
-        self.assertEqual("0", self.calc.Display)
+        self.assertEqual("100000000000", self.calc.Display)
         self.assertTrue(self.calc.Error)
 
+    def test_div1_3(self):
+        self.calc.Press("1")
+        self.calc.Press("/")
+        self.calc.Press("3")
+        self.calc.Press("=")
+        self.assertEqual("0.33333333333", self.calc.Display)
+        self.assertFalse(self.calc.Error)
 
 if __name__ == '__main__':
     unittest.main()

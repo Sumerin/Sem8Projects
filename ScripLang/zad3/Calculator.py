@@ -127,7 +127,11 @@ class Calculator():
         else:
             self.Display = str(int(value))
 
-        if len(self.Display) > 11:
+        if len(self.Display) > 13:
+            self.Display = self.Display[0:13]
+            return
+
+        if len(str(int(value))) > 11:
             self.Error = True
             #self.Display = "0"
 
