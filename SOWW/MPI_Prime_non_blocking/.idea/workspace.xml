@@ -12,9 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f5ff52f-cf06-437c-b0a4-7e31159b47b1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../MPI_Prime/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MPI_Prime/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MPI_Prime/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MPI_Prime/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ScripLang/zad2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ScripLang/zad2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ScripLang/zad3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ScripLang/zad3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ScripLang/zad3/Calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ScripLang/zad3/Calculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ScripLang/zad3/Calculator_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ScripLang/zad3/Calculator_Test.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,22 +39,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="60">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#926#957#0" expanded="true" />
-                <element signature="e#1038#1057#0" expanded="true" />
-                <element signature="e#1351#1386#0" expanded="true" />
-                <element signature="e#1604#1635#0" expanded="true" />
-                <element signature="e#2019#2065#0" expanded="true" />
-                <element signature="e#2407#2455#0" expanded="true" />
-                <element signature="e#2694#2809#0" expanded="true" />
-                <element signature="e#3492#3527#0" expanded="true" />
-                <element signature="e#3752#3924#0" expanded="true" />
-                <element signature="e#4163#4207#0" expanded="true" />
-                <element signature="e#4328#4366#0" expanded="true" />
-                <element signature="e#4986#5048#0" expanded="true" />
+                <element signature="e#1018#1049#0" expanded="true" />
+                <element signature="e#1229#1264#0" expanded="true" />
+                <element signature="e#1347#1379#0" expanded="true" />
+                <element signature="e#1759#1790#0" expanded="true" />
+                <element signature="e#2174#2220#0" expanded="true" />
+                <element signature="e#2562#2610#0" expanded="true" />
+                <element signature="e#2849#2964#0" expanded="true" />
+                <element signature="e#3298#3339#0" expanded="true" />
+                <element signature="e#3647#3682#0" expanded="true" />
+                <element signature="e#3907#4079#0" expanded="true" />
+                <element signature="e#4326#4370#0" expanded="true" />
+                <element signature="e#4491#4529#0" expanded="true" />
+                <element signature="e#4677#4757#0" expanded="true" />
+                <element signature="e#5149#5211#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,7 +97,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,11 +108,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MPI_Prime" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -144,16 +149,17 @@
       <updated>1557601027133</updated>
       <workItem from="1557601028317" duration="9541000" />
       <workItem from="1557610595917" duration="1148000" />
+      <workItem from="1558864467583" duration="3447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10689000" />
+    <option name="totallyTimeSpent" value="14136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24599786" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -165,7 +171,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32948583" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32948583" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.31899264" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32948583" />
       <window_info anchor="bottom" id="CMake" order="12" />
@@ -182,9 +188,6 @@
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindMPI/test_mpi.cpp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/SOWW.cbp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file:///usr/include/mpi/mpi.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -192,24 +195,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/SOWW.cbp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#926#957#0" expanded="true" />
-            <element signature="e#1038#1057#0" expanded="true" />
-            <element signature="e#1351#1386#0" expanded="true" />
-            <element signature="e#1604#1635#0" expanded="true" />
-            <element signature="e#2019#2065#0" expanded="true" />
-            <element signature="e#2407#2455#0" expanded="true" />
-            <element signature="e#2694#2809#0" expanded="true" />
-            <element signature="e#3492#3527#0" expanded="true" />
-            <element signature="e#3752#3924#0" expanded="true" />
-            <element signature="e#4163#4207#0" expanded="true" />
-            <element signature="e#4328#4366#0" expanded="true" />
-            <element signature="e#4986#5048#0" expanded="true" />
+            <element signature="e#1018#1049#0" expanded="true" />
+            <element signature="e#1229#1264#0" expanded="true" />
+            <element signature="e#1347#1379#0" expanded="true" />
+            <element signature="e#1759#1790#0" expanded="true" />
+            <element signature="e#2174#2220#0" expanded="true" />
+            <element signature="e#2562#2610#0" expanded="true" />
+            <element signature="e#2849#2964#0" expanded="true" />
+            <element signature="e#3298#3339#0" expanded="true" />
+            <element signature="e#3647#3682#0" expanded="true" />
+            <element signature="e#3907#4079#0" expanded="true" />
+            <element signature="e#4326#4370#0" expanded="true" />
+            <element signature="e#4491#4529#0" expanded="true" />
+            <element signature="e#4677#4757#0" expanded="true" />
+            <element signature="e#5149#5211#0" expanded="true" />
           </folding>
         </state>
       </provider>

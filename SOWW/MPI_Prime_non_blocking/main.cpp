@@ -2,14 +2,14 @@
 #include <mpi/mpi.h>
 #include <time.h>
 
-#define  L 100000
-#define  R 600000
-#define  N 10
+#define  L 1900000
+#define  R 2000000
+#define  N 1000
 #define  COUNT ((R - L) / N)
 
 
 //#define SHOW_DEBUG
-#define SHOW_RESULT
+//#define SHOW_RESULT
 
 int IsPrime(int a)
 {
@@ -25,10 +25,12 @@ int IsPrime(int a)
 
 void fullfill_data(int package_count, int *out)
 {
-    for (int i = 0; i < N; ++i)
-    {
-        out[i] = L + (package_count * N) + i;
-    }
+    out[0] = L + (package_count * N);
+    out[1] = L + ((package_count + 1) * N);
+//    for (int i = 0; i < N; ++i)
+//    {
+//        out[i] = L + (package_count * N) + i;
+//    }
 }
 
 void master_work(int myrank, int proccount)
@@ -51,19 +53,24 @@ void master_work(int myrank, int proccount)
         printf("init send to %d\n", i);
 #endif
         fullfill_data(package_count, buffer2);
-#ifdef SHOW_DEBUG
-        printf("send 0\n");
-#endif
-        MPI_Send(buffer2, N, MPI_INT, i, package_count, MPI_COMM_WORLD);
-        package_count++;
-
-        fullfill_data(package_count, buffer2);
-        MPI_Isend(buffer2, N, MPI_INT, i, package_count, MPI_COMM_WORLD, &sRequest[i]);
+        MPI_Send(buffer2, 2, MPI_INT, i, package_count, MPI_COMM_WORLD);
         package_count++;
 
 #ifdef SHOW_DEBUG
         printf("init send end to %d\n", i);
 #endif
+    }
+
+    for (i = 1; i < proccount; ++i)
+    {
+#ifdef SHOW_DEBUG
+        printf("init send2 to %d\n", i);
+#endif
+
+        fullfill_data(package_count, buffer2);
+        MPI_Isend(buffer2, 2, MPI_INT, i, package_count, MPI_COMM_WORLD, &sRequest[i]);
+        package_count++;
+
     }
 
     for (j = 0; j < proccount; ++j)
@@ -91,7 +98,7 @@ void master_work(int myrank, int proccount)
 #ifdef SHOW_DEBUG
         printf("send data to %d\n", requestCompleted);
 #endif
-        MPI_Isend(buffer2, N, MPI_INT, status.MPI_SOURCE, package_count, MPI_COMM_WORLD, &sRequest[status.MPI_SOURCE]);
+        MPI_Isend(buffer2, 2, MPI_INT, status.MPI_SOURCE, package_count, MPI_COMM_WORLD, &sRequest[status.MPI_SOURCE]);
         package_count++;
 
         MPI_Irecv(&(buffer[requestCompleted]), 1, MPI_INT, requestCompleted, MPI_ANY_TAG, MPI_COMM_WORLD,
@@ -113,7 +120,7 @@ void master_work(int myrank, int proccount)
         printf("package: %d out of %d\n", recv_package_count, COUNT);
         printf("send end to %d\n", requestCompleted);
 #endif
-        MPI_Isend(buffer2, N, MPI_INT, status.MPI_SOURCE, COUNT, MPI_COMM_WORLD,
+        MPI_Isend(buffer2, 2, MPI_INT, status.MPI_SOURCE, COUNT, MPI_COMM_WORLD,
                   &sRequest[status.MPI_SOURCE]);//end task
         MPI_Irecv(&(buffer[requestCompleted]), 1, MPI_INT, requestCompleted, MPI_ANY_TAG, MPI_COMM_WORLD,
                   &(recvRequest[requestCompleted]));
@@ -142,7 +149,7 @@ void slave_work(int myrank, int proccount)
 #ifdef SHOW_DEBUG
     printf("[%d]rec start \n", myrank);
 #endif
-    MPI_Recv(buffer, N, MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+    MPI_Recv(buffer, 2, MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
     clock_t start = clock();
     clock_t stop = 0;
     t = 0;
@@ -153,11 +160,11 @@ void slave_work(int myrank, int proccount)
         printf("[%d] buffer %d  buffer2 %d\n", myrank, buffer, buffer2);
         printf("[%d] buffer %d %d  buffer2 %d %d\n", myrank, buffer[0], buffer[1], buffer2[0], buffer2[1]);
 #endif
-        MPI_Irecv(buffer2, N, MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &recvRequest);
+        MPI_Irecv(buffer2, 2, MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &recvRequest);
         result = 0;
-        for (int i = 0; i < N; ++i)
+        for (int i = buffer[0]; i < buffer[1]; ++i)
         {
-            result += IsPrime(buffer[i]);
+            result += IsPrime(i);
         }
 
 #ifdef SHOW_DEBUG

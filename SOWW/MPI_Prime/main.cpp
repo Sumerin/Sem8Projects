@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <mpi/mpi.h>
 
-#define  L 100000
-#define  R 600000
-#define  N 10
+#define  L 1900000
+#define  R 2000000
+#define  N 1000
 #define  COUNT ((R - L) / N)
 
 
 //#define SHOW_DEBUG
-#define SHOW_RESULT
+//#define SHOW_RESULT
 
 int IsPrime(int a)
 {
@@ -24,10 +24,12 @@ int IsPrime(int a)
 
 void fullfill_data(int package_count, int *out)
 {
-    for (int i = 0; i < N; ++i)
-    {
-        out[i] =  L + (package_count * N) + i;
-    }
+    out[0] = L + (package_count * N);
+    out[1] = L + ((package_count + 1) * N);
+//    for (int i = 0; i < N; ++i)
+//    {
+//        out[i] =  L + (package_count * N) + i;
+//    }
 }
 
 void master_work(int myrank, int proccount)
@@ -46,7 +48,7 @@ void master_work(int myrank, int proccount)
         printf("init send to %d\n", i);
 #endif
         fullfill_data(package_count, buffer2);
-        MPI_Send(buffer2, N, MPI_INT, i, package_count, MPI_COMM_WORLD);
+        MPI_Send(buffer2, 2, MPI_INT, i, package_count, MPI_COMM_WORLD);
         package_count++;
 #ifdef SHOW_DEBUG
         printf("init send end to %d\n", i);
@@ -61,7 +63,7 @@ void master_work(int myrank, int proccount)
         number_of_primes += buffer;
 
         fullfill_data(package_count, buffer2);
-        MPI_Send(buffer2, N, MPI_INT, status.MPI_SOURCE, package_count, MPI_COMM_WORLD);
+        MPI_Send(buffer2, 2, MPI_INT, status.MPI_SOURCE, package_count, MPI_COMM_WORLD);
         package_count++;
     }
 
@@ -72,7 +74,7 @@ void master_work(int myrank, int proccount)
 
         number_of_primes += buffer;
 
-        MPI_Send(buffer2, N, MPI_INT, status.MPI_SOURCE, COUNT, MPI_COMM_WORLD);//end task
+        MPI_Send(buffer2, 2, MPI_INT, status.MPI_SOURCE, COUNT, MPI_COMM_WORLD);//end task
     }
 #ifdef SHOW_RESULT
     printf("Primes: %d\n", number_of_primes);
@@ -87,7 +89,7 @@ void slave_work(int myrank, int proccount)
     int i;
     MPI_Status status;
 
-    MPI_Recv(buffer, N, MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+    MPI_Recv(buffer, 2, MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
     clock_t  start = clock();
     clock_t  stop = 0;
     int t = 0;
@@ -95,14 +97,14 @@ void slave_work(int myrank, int proccount)
     {
         t++;
         result = 0;
-        for (i = 0; i < N; ++i)
+        for (int i = buffer[0]; i < buffer[1]; ++i)
         {
-            result += IsPrime(buffer[i]);
+            result += IsPrime(i);
         }
 
         MPI_Send(&result, 1, MPI_INT, 0, status.MPI_TAG, MPI_COMM_WORLD);
 
-        MPI_Recv(buffer, N, MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+        MPI_Recv(buffer, 2, MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
     }
 #ifdef SHOW_RESULT
     stop = clock();
