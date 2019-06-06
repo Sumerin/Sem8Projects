@@ -1,0 +1,72 @@
+{% extends "polls/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2 ">{{ news.author }}</a>
+                <small class="text-muted">{{ news.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-img"><img src="{{ news.photo.url }}"/> </a></h2>
+            <h2><a class="article-title" href="#">{{ news.title }}</a></h2>
+            <p class="article-content">{{ news.content }}</p>
+        </div>
+    </article>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Komentarze:</h3>
+            </div><!-- /col-sm-12 -->
+        </div><!-- /row -->
+        {% for comment in comments %}
+            <div class="row">
+                <div class="col-sm-1">
+                    <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                    </div><!-- /thumbnail -->
+                </div><!-- /col-sm-1 -->
+
+                <div class="col-sm-5">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>{{ comment.author }}</strong>
+                            <span class="text-muted">{{ comment.date_posted }}</span>
+                        </div>
+                        <div class="panel-body">
+                            {{ comment.content }}
+                        </div><!-- /panel-body -->
+                    </div><!-- /panel panel-default -->
+                </div><!-- /col-sm-5 -->
+            </div><!-- /row -->
+        {% endfor %}
+        <div class="row">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="col-sm-20">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4">Dodaj komentarz:</legend>
+                                <div id="div_id_content" class="form-group">
+                                    <input type="hidden" name="author" value="{{ user.id }}">
+                                    <input type="hidden" name="news" value="{{ news.id }}">
+                                    <label for="id_content" class="col-form-label  requiredField">
+                                        Treść
+                                    </label>
+                                    <div class="">
+                                        <textarea name="content" cols="40" rows="10" class="textarea form-control"
+                                                  required="" id="id_content"></textarea>
+                                    </div>
+                                </div>
+                                {#                                {{ form|crispy }}#}
+                            </fieldset>
+                            <div class="form-group">
+                                <button class="btn btn-outline-secondary" type="submit">Skomentuj</button>
+                            </div>
+                        </div>
+                    </div><!-- /panel panel-default -->
+                </div><!-- /col-sm-5 -->
+            </form>
+        </div><!-- /row -->
+    </div><!-- /container -->
+{% endblock content %}

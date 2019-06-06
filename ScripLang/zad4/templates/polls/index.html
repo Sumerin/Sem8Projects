@@ -1,0 +1,16 @@
+{% extends "polls/base.html" %}
+{% block content %}
+    {% for ne in news %}
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2 ">{{ ne.author }}</a>
+                    <small class="text-muted">{{ ne.date_posted|date:"F d, Y" }}</small>
+                </div>
+                <h2><a class="article-img"><img src="{{ ne.photo.url }}"/> </a></h2>
+                   <h2> <a class="article-title" href="/news/{{ ne.id }}">{{ ne.title }}</a></h2>
+                <p class="article-content">{{ ne.content }}</p>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
